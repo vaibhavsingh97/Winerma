@@ -1,16 +1,20 @@
-# Wine Recommendation System
+# Wine Recommendation System  
+On the Internet, where the number of choices is overwhelming, there is need to filter, prioritize and efficiently deliver relevant information in order to alleviate the problem of information overload, which has created a potential problem to many Internet users. Recommender systems solve this problem by searching through large volume of dynamically generated information to provide users with personalized content and services. We had
+
+
 
 ## Requirements
 
 * [Python 3.5](https://docs.python.org/3/)
 * [SciPy](https://api.mongodb.com/python/current/)
 * [Bootstrap3](http://django-bootstrap3.readthedocs.io/en/latest/)
-* [Sklearn]()
-* [Numpy]()
+* [sklearn]()
+* [numpy]()
+* [panadas]()
 
 ## Stages
 
-- [`stage-0`](#!): Created an empty project.  
+- [**stage-0**](#!): Created an empty project.  
 - [`stage-0.1`](#!): A Django project with one app called `reviews`. The app defines model entities.  
 - [`stage-0.2`](#!): Added Admin site up and running for our model entitities `Wine` and `Review`.  
 - [`stage-0.3`](#!): Added views and templates.  
@@ -20,12 +24,14 @@
 - [`stage-1.1`](#!): `add_review` now requires login. Added login templates and menu sesion links.   
 - [`stage-1.2`](#!): Added a user reviews page created.  
 - [**stage-2**](#!): user management done.  
-- [`stage-2.1`](#!): Scripts to load CSV available + data loaded.  
+- [`stage-2.1`](#!): Added Scripts to load CSV available + data loaded.  
 - [`stage-2.2`](#!): An empty wine suggestions view has been added.  
 - [`stage-2.3`](#!): Suggestions view now shows wines not reviewed by the user.  
 - [`stage-2.4`](#!): Added cluster model object and manually created three clusters.  
 - [`stage-2.5`](#!): Suggestions view now makes use of cluster information.  
-- [**stage-3**](#!): K-means clustering based recommendations provided.  
+- [**stage-3**](#!): K-means clustering based recommendations provided.    
+
+
 
 1. First creting project using django  
 ```
