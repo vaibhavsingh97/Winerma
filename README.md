@@ -53,7 +53,16 @@ recommendation systems.
 - [**stage-3**](#!): K-means clustering based recommendations provided.    
 
 
+## Using k-means clustering to provide better recommendations
+What we have done so far in terms of wine recommendations is not especially impressive. Any of us can try to impress a friend by recommending a wine we recently tried and she did not. Many times we do that without really knowing our friend's preferences and therefore without really knowing if she will enjoy our recommendations.
 
+There are at least two other ways we can make recommendations that improve the previous naive approach. Both of them require us to know our friend's preferences. In the first approach, we ask her to tell us a few wines she liked and, based on our knowledge about these wines, we recommend her wines that are similar. This requires a good amount of knowledge about wine. It is what a good and experienced wine store owner would do, and suggestions are hard to improve by a computer that follows the same approach due to many unknown factors that are involved in this kind of customer relationship.
+
+There is a second approach that doesn't require any knowledge about wine, but one only needs to know what other people like and dislike (and not just that of our friend/customer). With that knowledge, we just try to find a person with similar preferences to our friend. Then we ask that second person for her favourite wines and suggest them to our first friend, not including those that our first friend have already tried. We just act as an intermediary, and a computer system here can do the job better than any human being since it can "ask" millions of people in short time.
+
+This is what our system will do, and we will use clustering for that. Why? Simple. Instead of trying to compare our user to every other user in the system every time recommendations are needed, we will pre-cluster all the users in the system by its wine reviews scores. By doing so we will have groups of similar users. Then, when a user asks for recommendations, we will look for them just in the cluster this user is clustered in. Since we know all the users in that cluster have a similar taste (they scored similarly the same wines, for good or bad), this greatly reduces the search space.
+
+Of course there are more sophisticated recommender systems (e.g. collaborative filtering using ALS), but this one is easy to understand in terms of its meaning and makes use of some machine learning techniques we already know about.
 1. First creting project using django  
 ```
 $ django-admin.py createproject ProjectName
