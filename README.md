@@ -1,6 +1,27 @@
 # Wine Recommendation System  
-On the Internet, where the number of choices is overwhelming, there is need to filter, prioritize and efficiently deliver relevant information in order to alleviate the problem of information overload, which has created a potential problem to many Internet users. Recommender systems solve this problem by searching through large volume of dynamically generated information to provide users with personalized content and services. We had
+There is an extensive class of Web applications that involve predicting user
+responses to options. Such a facility is called a recommendation system. We
+shall begin this chapter with a survey of the most important examples of these
+systems. However, to bring the problem into focus, two good examples of
+recommendation systems are:
+1. Offering news articles to on-line newspaper readers, based on a prediction
+of reader interests.
+2. Offering customers of an on-line retailer suggestions about what they
+might like to buy, based on their past history of purchases and/or product
+searches.
 
+Recommendation systems use a number of different technologies. We can
+classify these systems into two broad groups.
+- Content-based systems examine properties of the items recommended. For
+instance, if a Netflix user has watched many cowboy movies, then recommend
+a movie classified in the database as having the “cowboy” genre.
+- Collaborative filtering systems recommend items based on similarity measures
+between users and/or items. The items recommended to a user are
+those preferred by similar users. This sort of recommendation system can
+use the groundwork laid in Chapter 3 on similarity search and Chapter 7
+on clustering. However, these technologies by themselves are not suffi-
+cient, and there are some new algorithms that have proven effective for
+recommendation systems.
 
 
 ## Requirements
