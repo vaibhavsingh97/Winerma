@@ -1,9 +1,7 @@
 # Wine Recommendation System  
 There is an extensive class of Web applications that involve predicting user
-responses to options. Such a facility is called a recommendation system. We
-shall begin this chapter with a survey of the most important examples of these
-systems. However, to bring the problem into focus, two good examples of
-recommendation systems are:
+responses to options. Such a facility is called a recommendation system.Two good
+examples of recommendation systems are:
 1. Offering news articles to on-line newspaper readers, based on a prediction
 of reader interests.
 2. Offering customers of an on-line retailer suggestions about what they
@@ -17,21 +15,21 @@ instance, if a Netflix user has watched many cowboy movies, then recommend
 a movie classified in the database as having the “cowboy” genre.
 - Collaborative filtering systems recommend items based on similarity measures
 between users and/or items. The items recommended to a user are
-those preferred by similar users. This sort of recommendation system can
-use the groundwork laid in Chapter 3 on similarity search and Chapter 7
-on clustering. However, these technologies by themselves are not suffi-
+those preferred by similar users. However, these technologies by themselves are not suffi-
 cient, and there are some new algorithms that have proven effective for
 recommendation systems.
 
+We have used K-means clustering to give recommendation to users
 
 ## Requirements
 
 * [Python 3.5](https://docs.python.org/3/)
+* [django](https://www.djangoproject.com/)
 * [SciPy](https://api.mongodb.com/python/current/)
 * [Bootstrap3](http://django-bootstrap3.readthedocs.io/en/latest/)
-* [sklearn]()
-* [numpy]()
-* [panadas]()
+* [sklearn](http://scikit-learn.org/)
+* [numpy](http://www.numpy.org/)
+* [panadas](http://pandas.pydata.org/)
 
 ## Stages
 
@@ -52,6 +50,10 @@ recommendation systems.
 - [`stage-2.5`](#!): Suggestions view now makes use of cluster information.  
 - [**stage-3**](#!): K-means clustering based recommendations provided.    
 
+## Datasets
+
+## Steps in brief
+
 
 ## Using k-means clustering to provide better recommendations
 What we have done so far in terms of wine recommendations is not especially impressive. Any of us can try to impress a friend by recommending a wine we recently tried and she did not. Many times we do that without really knowing our friend's preferences and therefore without really knowing if she will enjoy our recommendations.
@@ -62,19 +64,19 @@ There is a second approach that doesn't require any knowledge about wine, but on
 
 This is what our system will do, and we will use clustering for that. Why? Simple. Instead of trying to compare our user to every other user in the system every time recommendations are needed, we will pre-cluster all the users in the system by its wine reviews scores. By doing so we will have groups of similar users. Then, when a user asks for recommendations, we will look for them just in the cluster this user is clustered in. Since we know all the users in that cluster have a similar taste (they scored similarly the same wines, for good or bad), this greatly reduces the search space.
 
-Of course there are more sophisticated recommender systems (e.g. collaborative filtering using ALS), but this one is easy to understand in terms of its meaning and makes use of some machine learning techniques we already know about.
-1. First creting project using django  
-```
-$ django-admin.py createproject ProjectName
-```
+Of course there are more sophisticated recommender systems (e.g. collaborative filtering using ALS), but this one is easy to understand in terms of its meaning and makes use of some machine learning techniques we already know about.  
 
-2. d
+### CSetting up project
+```
+$ python manage.py createproject ProjectName
+```
 
 ## Run
 
 ```
 $ python manage.py runserver 0.0.0.0:8000
 ```
+## Supporting Research paper
 ## Contributiors
 * [Shreya Garg](#!)
 * [Vaibhav Singh](github.com/vaibhavsingh97/)
