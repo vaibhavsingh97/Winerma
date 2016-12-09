@@ -7,7 +7,7 @@ import numpy as np
 def update_clusters():
     num_reviews = Review.objects.count()
     update_step = ((num_reviews/100)+1) * 5
-    if num_reviews % update_step == 0: # using some magic numbers here, sorry...
+    if num_reviews % update_step == 0: # using some magic numbers here
         # Create a sparse matrix from user reviews
         all_user_names = map(lambda x: x.username, User.objects.only("username"))
         all_wine_ids = set(map(lambda x: x.wine.id, Review.objects.only("wine")))

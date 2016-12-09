@@ -52,31 +52,48 @@ We have used K-means clustering to give recommendation to users
 
 ## Datasets
 
-## Steps in brief
+The dataset we to used is provided by [CellarTracker](http://www.cellartracker.com/). It consists of 2,025,995
+wine reviews from CellarTracker, involving 44,268 users and 485,179 kinds of wines. Every piece of review data includes 9 cells of information:
+1. name of the wine
+2. wine unique id
+3. reviewers name
+4. reviewers id
+5. rating
+6. the review text
 
+## Steps in brief
+1. **User Authenticatio**  
+User have to register in our webapp
+2. **Reviews**  
+User have to give reviews of the products listed in our webapp
+3. **Clustering Users**  
+Clustering users on the basis of same user preferences/reviews
+4. **Recomendation**  
+User can check recommendations on the basis of reviews he/she had given
 
 ## Using k-means clustering to provide better recommendations
-What we have done so far in terms of wine recommendations is not especially impressive. Any of us can try to impress a friend by recommending a wine we recently tried and she did not. Many times we do that without really knowing our friend's preferences and therefore without really knowing if she will enjoy our recommendations.
+There are at least two other ways we can make recommendations that improve the previous naive approach. Both of them require us to know our friend's preferences. In the first approach, we ask user to tell us a few wines he/she liked and, based on our knowledge about these wines, we recommend user wines that are similar. This requires a good amount of knowledge about wine. It is what a good and experienced wine store owner would do, and suggestions are hard to improve by a computer that follows the same approach due to many unknown factors that are involved in this kind of customer relationship.
 
-There are at least two other ways we can make recommendations that improve the previous naive approach. Both of them require us to know our friend's preferences. In the first approach, we ask her to tell us a few wines she liked and, based on our knowledge about these wines, we recommend her wines that are similar. This requires a good amount of knowledge about wine. It is what a good and experienced wine store owner would do, and suggestions are hard to improve by a computer that follows the same approach due to many unknown factors that are involved in this kind of customer relationship.
-
-There is a second approach that doesn't require any knowledge about wine, but one only needs to know what other people like and dislike (and not just that of our friend/customer). With that knowledge, we just try to find a person with similar preferences to our friend. Then we ask that second person for her favourite wines and suggest them to our first friend, not including those that our first friend have already tried. We just act as an intermediary, and a computer system here can do the job better than any human being since it can "ask" millions of people in short time.
+There is a second approach that doesn't require any knowledge about wine, but one only needs to know what other people like and dislike (and not just that of our friend/customer). With that knowledge, we just try to find a person with similar preferences to our friend. Then we ask that second person for user's favourite wines and suggest them to our first friend, not including those that our first friend have already tried. We just act as an intermediary, and a computer system here can do the job better than any human being since it can "ask" millions of people in short time.
 
 This is what our system will do, and we will use clustering for that. Why? Simple. Instead of trying to compare our user to every other user in the system every time recommendations are needed, we will pre-cluster all the users in the system by its wine reviews scores. By doing so we will have groups of similar users. Then, when a user asks for recommendations, we will look for them just in the cluster this user is clustered in. Since we know all the users in that cluster have a similar taste (they scored similarly the same wines, for good or bad), this greatly reduces the search space.
 
 Of course there are more sophisticated recommender systems (e.g. collaborative filtering using ALS), but this one is easy to understand in terms of its meaning and makes use of some machine learning techniques we already know about.  
 
-### CSetting up project
+### Setting up project
 ```
-$ python manage.py createproject ProjectName
+$ git pull https://github.com/vaibhavsingh97/Winerma.git
 ```
-
-## Run
+## Running the server with runserver
 
 ```
 $ python manage.py runserver 0.0.0.0:8000
 ```
+Then we can go to our localhost server public URL http://localhost:8000
 ## Supporting Research paper
+* [Movie Recommendations from User Ratings](http://cs229.stanford.edu/proj2013/Bystrom-MovieRecommendationsFromUserRatings.pdf) - Hans Byström
+* [An Improved Recommendation Algorithm in Collaborative Filtering](http://link.springer.com/chapter/10.1007/3-540-45705-4_27)- Taek-Hun Kim, Young-Suk Ryu, Seok-In Park, Sung-Bong Yang
+
 ## Contributiors
 * [Shreya Garg](#!)
 * [Vaibhav Singh](github.com/vaibhavsingh97/)
